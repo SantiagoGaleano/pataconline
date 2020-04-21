@@ -59,3 +59,50 @@
       
       
   }
+
+
+  ul {
+    list-style-type: disc;
+    margin-block-start: 2em;
+}
+
+nav {
+    background-color: #e3e3e3 !important;
+}
+
+.padre {
+    display: flex;
+    width: 100%;
+}
+
+.link {
+    color: black !important;
+    font-family: "Paytone One", sans-serif;
+    font-size: 16px;
+    padding: 0px 0px 10px 0px;
+    position: relative;
+    display: flex;
+}
+
+.link:hover,
+.link:focus {
+    color: #F2C64D !important;
+    text-decoration: underline;
+    flex: auto;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+.barra{
+  top: 0;
+
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
