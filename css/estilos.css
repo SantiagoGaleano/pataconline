@@ -106,3 +106,34 @@ nav {
   position: fixed;
   width: 100%;
 }
+
+
+.botonPidePatacon{
+  background-image:url(../img/patacones/carne.jpg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  height:200px;
+  width:200px;
+  background-position:center;
+  border-radius: 15px;;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: translateX(4px);
+
+}
+
+
+.botonArmaPatacon{
+  background-image:url(../img/armar.jpeg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  height:180px;
+  width:200px;
+  background-position:center;
+  border-radius: 15px;;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: translateX(4px);
+  border: none;
+
+}
