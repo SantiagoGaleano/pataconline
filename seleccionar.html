@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+<!------ Include the above in your HEAD tag ---------->
+        <link rel="stylesheet" href="css/formulario.css">
+
+   
+
+    <script>
+
+$(document).ready(function () {
+    //Initialize tooltips
+    $('.nav-tabs > li a[title]').tooltip();
+    
+    //Wizard
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+        var $target = $(e.target);
+    
+        if ($target.parent().hasClass('disabled')) {
+            return false;
+        }
+    });
+
+    $(".next-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        nextTab($active);
+
+    });
+    $(".prev-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        prevTab($active);
+
+    });
+});
+
+function nextTab(elem) {
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+    </script>
+
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <form action="" id="wizard">
+        		<!-- SECTION 1 -->
+                <h4></h4>
+                <section>
+                    <h3>Haz tu pedido</h3>
+                	<div class="form-row">
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account"></i>
+                            <input type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account"></i>
+                            <input type="text" class="form-control" placeholder="Apellidos" required>
+                        </div>
+                	</div>
+                    <div class="form-row">
+
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-map"></i>
+                            <input type="text" class="form-control" placeholder="Número de celular" required>
+                        </div>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-email"></i>
+                            <input type="text" class="form-control" placeholder="Email" required>
+                        </div>
+                       
+                    </div>
+                    <div class="form-row">
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account-box-o"></i>
+                            <input type="text" class="form-control" placeholder="Dirección" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin"></i>
+                                <input type="text" class="form-control" placeholder="Torre">
+                            </div>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin-drop"></i>
+                                <input type="text" class="form-control" placeholder="Apto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-smartphone-android"></i>
+                            <input type="text" class="form-control" placeholder="Punto de referencia">
+                        </div>
+                        
+                    </div>
+                </section>
+
+				<!-- SECTION 2 -->
+                <h4></h4>
+                <section>
+                    <h3 style="margin-bottom: 16px; ">Nuestra Carta</h3>
+                    <table cellspacing="0" class="table-cart shop_table shop_table_responsive cart woocommerce-cart-form__contents table" id="shop_table">
+                        <thead>
+                            <th >&nbsp;</th>
+                            <th style="text-align: left;">Elige un producto</th>
+                            <th >Cantidad</th>
+                            
+                            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-1.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                        <a href="#">Patacón Carne desmechada </a>
+                                        <span>$</span>
+                                        <span>13.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                               
+                                
+                            </tr>
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Patacón con Pollo</a>
+                                        <span>$</span>
+                                        <span>14.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Patacón Mixto</a>
+                                        <span>$</span>
+                                        <span>12.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Patacón con Queso</a>
+                                        <span>$</span>
+                                        <span>12.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Patacón con carne molida</a>
+                                        <span>$</span>
+                                        <span>8.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Patacón montañero</a>
+                                        <span>$</span>
+                                        <span>14.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Patacón Mexicano</a>
+                                        <span>$</span>
+                                        <span>14.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                        <a href="#">Patacón Burguer </a>
+                                        <span>$</span>
+                                        <span>8.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Burguer New York</a>
+                                        <span>$</span>
+                                        <span>8.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Burger Miami</a>
+                                        <span>$</span>
+                                        <span>8.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Burger Hawai</a>
+                                        <span>$</span>
+                                        <span>8.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Producto">
+                                    <div>
+                                         <a href="#">Burger Boston</a>
+                                        <span>$</span>
+                                        <span>8.000</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Cantidad">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="0" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- SECTION 3 -->
+                <h4></h4>
+                <section>
+                    <h3 style="margin-bottom: 16px;">My Cart</h3>
+                    <table cellspacing="0" class="table-cart shop_table shop_table_responsive cart woocommerce-cart-form__contents table" id="shop_table">
+                        <thead>
+                            <th >&nbsp;</th>
+                            <th style="text-align: left;">Product Detail</th>
+                            <th >Quantity</th>
+                            <th >Total Price</th>
+                            <th >&nbsp;</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-1.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Product Detail">
+                                    <div>
+                                        <a href="#">Cherry</a>
+                                        <span>$</span>
+                                        <span>35</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Quantity">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                <td class="total-price" data-title="Total Price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">$</span>
+                                        70
+                                    </span>
+                                </td>
+                                <td class="product-remove">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-close-circle-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-thumb">
+                                    <a href="#" class="item-thumb">
+                                        <img src="images/item-2.jpg" alt="">
+                                    </a>
+                                </td>
+                                <td class="product-detail" data-title="Product Detail">
+                                    <div>
+                                         <a href="#">Mango</a>
+                                        <span>$</span>
+                                        <span>2035</span>
+                                    </div>
+                                </td>
+                                <td class="product-quantity" data-title="Quantity">
+                                    <div class="quantity">
+                                        <span class="plus">+</span>
+                                        <input type="number" id="quantity_5b4f198d958e1" class="input-text qty text" step="1" min="0" max="10" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" />
+                                        <span class="minus">-</span>
+                                    </div>
+                                </td>
+                                <td class="total-price" data-title="Total Price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">$</span>
+                                        20
+                                    </span>
+                                </td>
+                                <td class="product-remove">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-close-circle-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- SECTION 4 -->
+                <h4></h4>
+                <section>
+                    <h3>Cart Totals</h3>
+                    <div class="cart_totals">
+                        <table cellspacing="0" class="shop_table shop_table_responsive">
+                            <tr class="cart-subtotal">
+                                <th>Subtotal</th>
+                                <td data-title="Subtotal">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">$</span>110.00
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="cart-subtotal shipping">
+                                <th>Shipping:</th>
+                                <td data-title="Subtotal">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="radio" name="shipping" checked> Free Shipping
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="shipping"> Local pickup: <span>$</span><span>0.00</span>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <span>Calculate shipping</span>
+                                </td>
+                            </tr>
+                            <tr class="cart-subtotal">
+                                <th>Service <span>(estimated for Vietnam)</span></th>
+                                <td data-title="Subtotal">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">$</span>5.60
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="order-total border-0">
+                                <th>Total</th>
+                                <td data-title="Total">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">$</span>64.69
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </section>
+            </form>
+        </div>
+        
+        <script src="js/jquery-3.3.1.minFormulario.js"></script>
+		
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.stepsFormulario.js"></script>
+
+		<script src="js/mainFormulario.js"></script>
+    
+    </body>
+</html>
